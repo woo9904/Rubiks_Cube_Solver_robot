@@ -1,13 +1,20 @@
-# Rubiks_Cube_Solver_robot
-My first robot which is solving the Rubiks_Cube with Dynamixel_servo_motor.
-
 # Rubiks Cube Solver Ver. 1.0 (RCSv1)
-임베디드장비(Raspberry Pi 4 B+)와 영상처리(큐브 인식), Dynamixel 제어를 스스로 공부해보고 활용해 큐브를 자동으로 맞춰주는 로봇을 만들었다.
+## Description
+My first robot use Raspberry Pi 4 and Dynamixel_servo_motor(XM430-W350-T).   
+It also detect 6 sides of the Rubiks_Cube and solving it with servo_motor.   
+What i use algorithm is image precessing, motor control and python thread for LCD.   
+
+In this code i modified cube detection algorithm, motor control and i added LCD.
+
+임베디드장비(Raspberry Pi 4 B+)와 영상처리(큐브 인식), Dynamixel 제어를 스스로 공부해보고 활용해 큐브를 자동으로 맞춰주는 로봇을 만들었다.   
+추가적으로 결과물 입출력을 확인하기 위해서 LCD패널 및 다양한 외부회로를 만들었다.   
 
 * **제작자 : 정우진(Woo)**
 * **제작 기간 : 22.02.28~22.05.15**
 * **보고서 작성 일 : 22.05.25**
 
+I reference this link. (Thank you Andrea Favero, Groningen(NL) for giving source.)
+* [Reference_link](https://www.instructables.com/Rubik-Cube-Solver-Robot-With-Raspberry-Pi-and-Pica/)   
 
 ## 요약
 
