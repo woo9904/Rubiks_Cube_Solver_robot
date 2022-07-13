@@ -1,5 +1,5 @@
 # Rubiks Cube Solver Ver. 1.0 (RCSv1)
-## Description
+
 My first robot use Raspberry Pi 4 and Dynamixel_servo_motor(XM430-W350-T).   
 It also detect 6 sides of the Rubiks_Cube and solving it with servo_motor.   
 What i use algorithm is image precessing, motor control and python thread for LCD.   
@@ -16,7 +16,7 @@ In this code i modified cube detection algorithm, motor control and i added LCD.
 I reference this link. (Thank you Andrea Favero, Groningen(NL) for giving source.)
 * [Reference_link](https://www.instructables.com/Rubik-Cube-Solver-Robot-With-Raspberry-Pi-and-Pica/)   
 
-## 요약
+## Description
 
 22년 5월 15일 최종적으로 1차 제작 완료한 모델로,
 무작위로 섞은 큐브를 PiCam으로 인식하고, Dynamixel을 사용해 큐브를 푸는 로봇이다. 
@@ -30,6 +30,28 @@ I reference this link. (Thank you Andrea Favero, Groningen(NL) for giving source
 
 
 위 영상은 작동과정을 보여주고 있는 영상으로, 2배속을 한 영상이다. (임시로 넣은 영상임)
+
+##Environment
+실행에 필요한 package이다.   
+* Hardware
+로봇을 만드는데 사용한 부품에 대해 적는다.
+|Raspberry Pi 4 Model B 4GB | Raspberry Pi Camera V2 | Dynamixel XM430-W350-T | U2D2 | GANCUBE | 
+|--|--|--|--|--|
+|![nn](img/parts_Rpi.png)|![nn](img/parts_RpiCamera.png)|![nn](img/parts_Dynamixel.png)|![nn](img/parts_U2D2.png)|![nn](img/parts_Gencube.png)|
+
+* 3D models
+각각 부품들을 조합해 나타낸 것이다. 세부 부품 설명은 추후에 적겠다. 
+|3d model|출력 및 조립|
+|---|---|
+|![nn](img/3dModeling.png)|![nn](img/model.png)|
+
+* Software
+  * python 3.7.3, cv2 4.1.2
+  * numpy, RPi.GPIO, PiCamera
+  * twophase.solver (to install '$ pip install RubikTwoPhase')
+  
+## Files
+작성한 코드가 각자 어떤 역할을 하는지 설명해준다. 
 
 
 ### 개발 동기
