@@ -31,31 +31,68 @@ I reference this link. (Thank you Andrea Favero, Groningen(NL) for giving source
 
 위 영상은 작동과정을 보여주고 있는 영상으로, 2배속을 한 영상이다. (임시로 넣은 영상임)
 
-##Environment
+## Environment
 실행에 필요한 package이다.   
 * Hardware
+
 로봇을 만드는데 사용한 부품에 대해 적는다.
 |Raspberry Pi 4 Model B 4GB | Raspberry Pi Camera V2 | Dynamixel XM430-W350-T | U2D2 | GANCUBE | 
 |--|--|--|--|--|
 |![nn](img/parts_Rpi.png)|![nn](img/parts_RpiCamera.png)|![nn](img/parts_Dynamixel.png)|![nn](img/parts_U2D2.png)|![nn](img/parts_Gencube.png)|
 
 * 3D models
+
 각각 부품들을 조합해 나타낸 것이다. 세부 부품 설명은 추후에 적겠다. 
 |3d model|출력 및 조립|
 |---|---|
 |![nn](img/3dModeling.png)|![nn](img/model.png)|
 
 * Software
+
   * python 3.7.3, cv2 4.1.2
   * numpy, RPi.GPIO, PiCamera
-  * twophase.solver (to install '$ pip install RubikTwoPhase')
+  * twophase.solver (to install `$ pip install RubikTwoPhase`) 
+  * Dynamixel_SDK (to install [link](https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_sdk/download/#repository))
   
 ## Files
 작성한 코드가 각자 어떤 역할을 하는지 설명해준다. 
+1. cube_detect_pi.py
+    * 큐브 인식하기 위한 알고리즘
+	* 이미지 프로세싱 포함
+	
+2. gpio_control.py
+    * LCD화면, LED 등 외부 회로를 제어하기 위한 코드
+	* 쓰레드를 사용함
+	
+3. main.py
+    * 전체적인 코드를 통합한 코드
+	* 각 코드를 연결하기 위한 코드이다. (main)
+	
+4. motor_control.py
+    * 모터를 제어하기 위한 코드
+	* 3개의 모터를 제어해 큐브를 돌린다.
 
+추가적으로 motor제어에 안정화를 위해서 "Dynamixel_SDK"의 다음 라이브러리를 수정했다. 
+-> 어떤 내용인지 작성하기
+
+## Usage
+작품을 실행하기 위한 방법에 대해 설명한다. 
+1. Environment를 참고해 3d 모델을 뽑아 조립한다.
+2. 그후 Hardware을 연결한다.
+3. Software을 참고해 Raspberry Pi의 환경 세팅한다. 
+4. git clone을 통해 CODE 부분을 Raspberry Pi에 저장한다. 
+5. 명령창을 CODE의 폴더로 이동해 다음과 같이 명령어를 입력한다. 
+```
+$ python3 main.py
+```
+6. 그 후 외부 회로를 만들어 (회로도 참고) 버튼을 클릭해 실행한다. 
+7. 만든 로봇을 통해 큐브를 맞춘다!
+
+---------------------------------------------------------
+## Story(a development journal)
+개발 과정에 대해서 설명한다. 
 
 ### 개발 동기
-
 
 필자는 임베디드 시스템을 한번도 경험해 보지 못했다. 이번 기회에 Raspberry Pi에 익숙해지고 경험을 쌓기로 했다.    
 또한 모터 제어하는 방법을 잘 알지 못해 눈으로 로봇이 작동하는 것을 확인할 수 있으며 재미를 갖을 수 있는 요소를 찾다가   
