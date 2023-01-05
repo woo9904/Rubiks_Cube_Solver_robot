@@ -29,7 +29,8 @@ I reference this link. (Thank you Andrea Favero, Groningen(NL) for giving source
 추후에는 더 발전시켜 완성도를 높일 것이다.
 
 
-위 영상은 작동과정을 보여주고 있는 영상으로, 2배속을 한 영상이다. (임시로 넣은 영상임)
+위 영상은 작동과정을 보여주고 있는 영상으로, 2배속을 한 영상이다.    
+[![Video Label](https://img.youtube.com/vi/7SincwjlR4I/0.jpg)](https://youtu.be/7SincwjlR4I)
 
 ## Environment
 실행에 필요한 package이다.   
